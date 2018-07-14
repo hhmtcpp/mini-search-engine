@@ -1,0 +1,63 @@
+#ifndef _HEADER_H_
+#define _HEADER_H_
+
+template<class QT>
+struct QNode
+{
+    QT* node;
+    QNode* next;
+    QNode* prev;
+};
+
+template<class QT>
+class Queue
+{
+    QNode<QT> *first;
+    QNode<QT> *last;
+    public:
+    Queue() {
+        first = last = nullptr;
+    }
+    bool Empty() {
+        if (first == last && last == nullptr)
+            return true;
+        return false;
+    }
+
+    void Push_back(QT* x) {
+        if (first == nullptr) {
+            first = last = new QNode<QT>;
+            first->node = x;
+            first->next = first->prev = nullptr;
+        }
+        else {
+            last->next = new QNode<QT>;
+            last->next->prev = last;
+            last->next->next = nullptr;
+            last = last->next;
+            last->node = x;
+        }
+    }
+
+    QT* Pop_front() {
+        if (first == last && last == nullptr)
+            return nullptr;
+        else if (first == last) {
+            QT* res = first->node;
+            delete first;
+            first = last = nullptr;
+            return res;
+        }
+        else {
+            QT* res = last->node;
+            QNode<QT>* tmp = last;
+            last = last->prev;
+            delete tmp;
+            last->next = nullptr;
+            return res;
+        }
+    }
+};
+
+#endif // _HEADER_H_
+
