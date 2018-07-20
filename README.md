@@ -18,5 +18,5 @@ Main features:
 Contributors:
 - Huynh Ha Mai Trinh
 - Hoang Dinh Hieu
-- Vo Hong Thang
+- Nguyen Vo Hong Thang
 - Nguyen Quoc Viet
