@@ -1,6 +1,8 @@
 # mini-search-engine
 Mini Search Engine - CS163 Final Project
 
+Doc. Dinh Ba Tien, HCMC University of Science
+
 Full documentation can be found inside Group12.pdf
 
 Build:
